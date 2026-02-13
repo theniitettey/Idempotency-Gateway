@@ -34,7 +34,7 @@ The gateway uses an **Idempotency-Key** to uniquely identify requests and safely
 ### 1. Clone your fork
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/idempotency-gateway.git
+git clone https://github.com/theniitettey/idempotency-gateway.git
 cd idempotency-gateway
 ```
 
