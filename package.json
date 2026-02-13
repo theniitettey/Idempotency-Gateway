@@ -4,7 +4,7 @@
   "description": "This challenge is designed to test your ability to bridge Computer Science fundamentals with Modern Backend Engineering.",
   "main": "index.js",
   "scripts": {
-    "test": "npx ts-node --transpile-only tests/testIdempotency.ts",
+    "test": "npx ts-node --transpile-only src/tests/testIdempotency.ts",
     "dev": "nodemon",
     "build": "tsc",
     "start": "npm run build && node dist/server.js"
