@@ -39,6 +39,9 @@ class IdempotencyStore {
             resolve = res;
             reject = rej;
         })
+        
+        // Prevent unhandled rejection crashes if no one is listening
+        wrappedPromise.catch(() => {})
 
         const now = Date.now()
         const entry: Entry = {
