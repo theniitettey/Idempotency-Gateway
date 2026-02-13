@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from "express";
 import http from "http";
 import CONFIG, {STATUS_CODES} from "./config";
 import { loggerMiddleware, corsMiddleware, errorHandlerMiddleware } from "./middlewares";
+import { paymentRoutes } from "./routes";
 
 
 const app: Express = express();
@@ -13,6 +14,9 @@ app.use(corsMiddleware)
 app.use(loggerMiddleware)
 app.use(errorHandlerMiddleware)
 
+// Routes
+app.use("/", paymentRoutes)
+
 app.get("/", (req: Request, res: Response) => {
     res.json(
         {   
@@ -22,6 +26,7 @@ app.get("/", (req: Request, res: Response) => {
         }
     ).status(STATUS_CODES.OK)
 })
+
 
 async function startServer() {
     try {
