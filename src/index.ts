@@ -12,7 +12,11 @@ const server = http.createServer(app);
 app.use(express.json())
 app.use(corsMiddleware)
 app.use(loggerMiddleware)
+app.use(express.urlencoded({extended: true}))
 app.use(errorHandlerMiddleware)
+
+// Disable x-powered-by header
+app.disable("x-powered-by")
 
 // Routes
 app.use("/", paymentRoutes)
