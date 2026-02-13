@@ -3,6 +3,6 @@ import { paymentController } from "../controllers";
 
 const router = Router()
 
-router.post("/", paymentController.processPayment)
+router.post("/process-payment", paymentController.processPayment)
 
 export default router
