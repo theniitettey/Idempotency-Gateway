@@ -8,7 +8,7 @@ type Status = "IN_PROGRESS" | "COMPLETED"
 type Entry = {
     requestHash: string;
     status: Status;
-    response: StoredResponse;
+    response?: StoredResponse;
 
     // in-flight support
     promise: Promise<StoredResponse>
@@ -21,4 +21,9 @@ type Entry = {
     expiresAt: Date;
 }
 
-export type {StoredResponse, Status, Entry}
+type PaymentRequest = {
+ amount: number;
+ currency: string
+}
+
+export type {StoredResponse, Status, Entry, PaymentRequest}
