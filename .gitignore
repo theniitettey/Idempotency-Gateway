@@ -1,0 +1,14 @@
+# Dependencies
+package-lock.json
+
+# Node
+node_modules
+
+# IDE
+.vscode
+
+# Environment
+.env
+
+# Build
+dist
