@@ -1,12 +1,17 @@
 import express, { Express, Request, Response } from "express";
 import http from "http";
 import CONFIG, {STATUS_CODES} from "./config";
+import { loggerMiddleware, corsMiddleware, errorHandlerMiddleware } from "./middlewares";
 
 
 const app: Express = express();
 const server = http.createServer(app);
 
+// Middlewares
 app.use(express.json())
+app.use(corsMiddleware)
+app.use(loggerMiddleware)
+app.use(errorHandlerMiddleware)
 
 app.get("/", (req: Request, res: Response) => {
     res.json(
