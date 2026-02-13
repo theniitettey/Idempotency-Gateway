@@ -6,6 +6,7 @@ const CONFIG = {
     LOG_LEVEL: process.env.LOG_LEVEL || "info",
     ENV: process.env.NODE_ENV || "development",
     ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS || "*",
+    IDEMPOTENCY_TTL_SECONDS: Number(process.env.IDEMPOTENCY_TTL_SECONDS) || 60 * 60 * 24,
 }
 
 const STATUS_CODES = {
